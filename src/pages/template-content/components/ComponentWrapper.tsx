@@ -31,7 +31,7 @@ export const ComponentWrapper = ({ component }: { component: Component }) => {
         {ComponentToRender && <ComponentToRender {...component} />}
       </div>
       {isSelected && (
-        <div className="absolute top-0 right-0 -mt-3 -mr-3 flex items-center bg-white shadow-lg rounded-full">
+        <div className="absolute top-1 right-1 -mt-3 -mr-3 flex items-center bg-white shadow-lg rounded-full">
           <button
             onClick={(e) => {
               e.stopPropagation()

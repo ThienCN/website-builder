@@ -1,5 +1,7 @@
 import type { Component } from "@/types/Builder"
 import type { ComponentStyles } from "@/types/ElementBaseProps"
+import { Upload } from "lucide-react"
+import { useRef } from "react"
 
 type ComponentPropertiesProps = {
   selectedComponent: Component
@@ -12,6 +14,8 @@ export const ComponentProperties = ({
   handlePropChange,
   handleStyleChange,
 }: ComponentPropertiesProps) => {
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
   const componentHasOwnProperty = (properties: string) =>
     Object.prototype.hasOwnProperty.call(selectedComponent, properties)
 
@@ -68,6 +72,19 @@ export const ComponentProperties = ({
     </div>
   )
 
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        const src = e.target?.result as string
+        handlePropChange("src", src)
+      }
+      reader.readAsDataURL(file)
+    }
+    if (event.target) event.target.value = ""
+  }
+
   return (
     <div className="w-80 bg-gray-50 border-l border-gray-200 p-4 overflow-y-auto">
       <h2 className="text-lg font-semibold mb-2 text-gray-700">Properties</h2>
@@ -94,6 +111,19 @@ export const ComponentProperties = ({
       {selectedComponent.type === "Image" && (
         <>
           <AttributeInput label="Image URL" prop="src" />
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            className="cursor-pointer w-full flex items-center justify-center gap-2 mb-3 p-2 text-sm bg-white border border-gray-300 rounded-sm shadow-sm hover:bg-gray-100"
+          >
+            <Upload size={14} /> Change Image
+          </button>
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            onChange={handleFileChange}
+            className="hidden"
+          />
           <AttributeInput label="Alt Text" prop="alt" />
         </>
       )}

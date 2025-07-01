@@ -23,7 +23,140 @@ body {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
+}
+/* *, ::after, ::before, ::backdrop, ::file-selector-button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+} */
+
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.border {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow:
+    0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
+    0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+}
+
+.hover\:border-blue-500:hover {
+  border-color: #3b82f6;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-duration: 150ms;
+}
+
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.w-64 {
+  width: 256px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.max-h-\[500px\] {
+  max-height: 500px;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.group:hover .group-hover\:text-blue-600 {
+  color: #2563eb;
 }

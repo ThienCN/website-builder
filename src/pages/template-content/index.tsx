@@ -5,15 +5,12 @@ import { Header } from "@/pages/template-content/components/Header"
 import { ChangeTemplateModal } from "@/pages/template-content/components/ChangeTemplateModal"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { ExportModal } from "./components/ExportModal"
 
 export const TemplateContent = () => {
   const [isExportModalOpen, setExportModalOpen] = useState(false)
   const [isTemplateModalOpen, setTemplateModalOpen] = useState(false)
   const navigate = useNavigate()
-
-  const handleOpenChangeTemplateModal = () => {
-    setTemplateModalOpen(true)
-  }
 
   const handleConfirmChangeTemplate = () => {
     setTemplateModalOpen(false)
@@ -21,8 +18,8 @@ export const TemplateContent = () => {
   }
 
   return (
-    <div className="flex h-screen flex-col">
-      <div className="flex flex-1">
+    <div className="flex h-screen flex-col overflow-hidden">
+      <div className="flex flex-1 h-full">
         <Toolbox />
         <main className="flex-1 flex flex-col">
           <Header
@@ -38,6 +35,9 @@ export const TemplateContent = () => {
           setOpen={setTemplateModalOpen}
           handleConfirm={handleConfirmChangeTemplate}
         />
+      )}
+      {isExportModalOpen && (
+        <ExportModal onClose={() => setExportModalOpen(false)} />
       )}
     </div>
   )

@@ -17,7 +17,7 @@ export const Templates = () => {
       <h1 className="text-3xl font-bold text-gray-800">
         Choose a template to start
       </h1>
-      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="p-6 flex gap-6">
         {templates.map((template) => (
           <div
             key={template.name}
@@ -27,7 +27,7 @@ export const Templates = () => {
             <img
               src={template.previewImage}
               alt={`${template.name} preview`}
-              className="w-full h-auto object-cover bg-gray-200"
+              className="w-full h-auto object-cover bg-gray-200 max-h-[500px]"
             />
             <div className="p-4 bg-gray-50">
               <h3 className="font-semibold text-lg text-gray-700 group-hover:text-blue-600">
