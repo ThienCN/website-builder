@@ -10,7 +10,7 @@ export const Image = ({ src, alt, styles }: ImageProps) => (
     <img
       src={src}
       alt={alt}
-      className="w-fit h-auto object-cover rounded-lg"
+      className="w-fit max-w-full h-auto object-cover rounded-lg"
       onError={(e) => {
         e.currentTarget.src =
           "https://placehold.co/600x400/fecaca/991b1b?text=Invalid+Image+URL"

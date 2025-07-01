@@ -9,8 +9,8 @@ export const ChangeTemplateModal = ({
   setOpen,
   handleConfirm,
 }: ChangeTemplateModalProps) => (
-  <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-    <div className="bg-white rounded-lg shadow-2xl w-full max-w-4xl transform transition-all duration-300 ease-out">
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div className="bg-white rounded-lg shadow-2xl w-full max-w-3xl transform transition-all duration-300 ease-out">
       <div className="p-8 text-center">
         <AlertTriangle className="mx-auto text-red-500" size={48} />
         <h2 className="text-2xl font-bold mt-4">Clear Canvas?</h2>

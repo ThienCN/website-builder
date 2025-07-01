@@ -43,7 +43,7 @@ export const ComponentProperties = ({
         type={type}
         value={selectedComponent.styles[prop]}
         onChange={(e) => handleStyleChange(prop, e.target.value)}
-        className={`${type === "color" ? "w-11 h-11 px-0.5 cursor-pointer" : "w-full p-1.5"} border border-gray-300 rounded-sm shadow-sm`}
+        className={`${type === "color" ? "w-11 h-11 px-0.5 cursor-pointer" : "w-full p-1.5"} border border-gray-300 rounded-sm shadow-sm bg-white`}
         min={min}
         max={max}
       />
@@ -67,7 +67,7 @@ export const ComponentProperties = ({
         type={type}
         value={selectedComponent[prop]}
         onChange={(e) => handlePropChange(prop, e.target.value)}
-        className="w-full p-1.5 border border-gray-300 rounded-sm shadow-sm"
+        className="w-full p-1.5 border border-gray-300 rounded-sm shadow-sm bg-white"
       />
     </div>
   )
@@ -103,7 +103,7 @@ export const ComponentProperties = ({
           <textarea
             value={selectedComponent.content}
             onChange={(e) => handlePropChange("content", e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-sm shadow-sm"
+            className="w-full p-2 border border-gray-300 rounded-sm shadow-sm bg-white"
             rows={3}
           />
         </div>
@@ -151,7 +151,7 @@ export const ComponentProperties = ({
           <select
             value={selectedComponent.styles.fontWeight}
             onChange={(e) => handleStyleChange("fontWeight", e.target.value)}
-            className="w-full p-1.5 border border-gray-300 rounded-sm text-sm shadow-sm"
+            className="w-full p-1.5 border border-gray-300 rounded-sm text-sm shadow-sm bg-white"
           >
             <option value="400">Normal</option>
             <option value="500">Medium</option>

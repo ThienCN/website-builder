@@ -13,13 +13,13 @@ export const ExportModal = ({ onClose }: { onClose: () => void }) => {
       const styles = c.styles
       switch (c.type) {
         case "Heading":
-          content += `      <h1 style="padding: ${styles.padding}px; font-size: ${styles.fontSize}px; font-weight: ${styles.fontWeight}; color: ${styles.color}; text-align: center; word-wrap: break-word;">${c.content}</h1>\n`
+          content += `       <h1 style="padding: ${styles.padding}px; font-size: ${styles.fontSize}px; font-weight: ${styles.fontWeight}; color: ${styles.color}; text-align: center; word-wrap: break-word;">${c.content}</h1>\n`
           break
         case "Paragraph":
-          content += `      <h2 style="padding: ${styles.padding}px; font-size: ${styles.fontSize}px; font-weight: ${styles.fontWeight}; color: ${styles.color}; text-align: center; word-wrap: break-word;">${c.content}</h2>\n`
+          content += `      <p style="padding: ${styles.padding}px; font-size: ${styles.fontSize}px; font-weight: ${styles.fontWeight}; color: ${styles.color}; text-align: center; word-wrap: break-word;">${c.content}</p>\n`
           break
         case "Button":
-          content += `      <div style="text-align: center; padding: 16px 0;">\n<button style="padding: ${styles.paddingY}px ${styles.paddingX}px; background-color: ${styles.backgroundColor}; color: ${styles.color}; border-radius: ${styles.borderRadius}px; border: none; cursor: pointer; font-size: 16px;">${c.content}</button>\n    </div>\n`
+          content += `      <div style="text-align: center; padding: 16px 0;">\n        <button style="padding: ${styles.paddingY}px ${styles.paddingX}px; background-color: ${styles.backgroundColor}; color: ${styles.color}; border-radius: ${styles.borderRadius}px; border: none; cursor: pointer; font-size: 16px;">${c.content}</button>\n      </div>\n`
           break
         case "Space":
           content += `      <div style="height: ${styles.height}px;"></div>\n`
@@ -29,7 +29,7 @@ export const ExportModal = ({ onClose }: { onClose: () => void }) => {
           break
       }
     })
-    return `<!DOCTYPE html>\n  <html lang="en">\n    <head>\n      <meta charset="UTF-8">\n      <meta name="viewport" content="width=device-width, initial-scale=1.0">\n      <title>My Page</title>\n      <style>\n        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;padding:40px 20px;background-color:#f3f4f6;} *{box-sizing:border-box;}\n      </style>\n    </head>\n    <body>\n      <div style="max-width:${pageSettings.maxWidth}px;background-color:${pageSettings.backgroundColor};margin:0 auto;padding:20px;border-radius:8px;box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);">${content.trim()}</div>\n    </body>\n  </html>`
+    return `<!DOCTYPE html>\n<html lang="en">\n  <head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>My Page</title>\n    <style>\n      body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;padding:40px 20px;background-color:#f3f4f6;} *{box-sizing:border-box;}\n    </style>\n  </head>\n  <body>\n    <div style="max-width:${pageSettings.maxWidth}px;background-color:${pageSettings.backgroundColor};margin:0 auto;padding:20px;border-radius:8px;box-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);">\n      ${content.trim()}\n    </div>\n  </body>\n</html>`
   }, [components, pageSettings])
 
   useEffect(() => {

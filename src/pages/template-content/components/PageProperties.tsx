@@ -29,7 +29,7 @@ export const PageProperties = ({
             onChange={(e) =>
               updatePageSettings({ backgroundColor: e.target.value })
             }
-            className="w-11 h-11 px-0.5 border border-gray-300 rounded-sm shadow-sm cursor-pointer"
+            className="w-11 h-11 px-0.5 border border-gray-300 rounded-sm shadow-sm cursor-pointer bg-white"
           />
         </div>
         <div className="mb-3">
@@ -42,7 +42,7 @@ export const PageProperties = ({
             max="1600"
             value={maxWidth}
             onChange={(e) => updatePageSettings({ maxWidth: e.target.value })}
-            className="w-full p-1.5 border border-gray-300 rounded-sm shadow-sm"
+            className="w-full p-1.5 border border-gray-300 rounded-sm shadow-sm bg-white"
           />
         </div>
       </div>

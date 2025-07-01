@@ -31,16 +31,16 @@ export const ComponentWrapper = ({ component }: { component: Component }) => {
         {ComponentToRender && <ComponentToRender {...component} />}
       </div>
       {isSelected && (
-        <div className="absolute top-1 right-1 -mt-3 -mr-3 flex items-center bg-white shadow-lg rounded-full">
+        <div className="absolute -top-1 -right-1 flex items-center bg-white shadow-lg rounded-full">
           <button
             onClick={(e) => {
               e.stopPropagation()
               deleteComponent(component.id)
             }}
-            className="p-2 text-red-500 hover:text-red-700 focus:outline-none cursor-pointer"
+            className="p-2 text-red-500 hover:text-red-700 focus:outline-none cursor-pointer w-2.25 h-2.25"
             aria-label="Delete component"
           >
-            <Trash2 size={18} />
+            <Trash2 size={19} />
           </button>
         </div>
       )}
